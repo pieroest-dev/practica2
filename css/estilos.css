@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+/* 1. Título superior ocupando todo el ancho con línea divisoria inferior de 5px */
+h1, #header h1 {
+    text-align: center;
+    background-color: #99CCFF;
+    border: none;
+    border-bottom: 5px solid black;
+    margin: 0;
+    padding: 15px 0;
+    width: 100%;
+    color: #000000;
+}
+
+/* 2 y 3. Imagen con recuadro negro, alineada a la derecha y separada 60px */
+img, #content img {
+    float: right;
+    margin-right: 60px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 2px solid black;
+}
+
+/* Párrafos: puntos 5 (sombra), 9 (sangría 40px), 10 (ancho 90%), 11 (separación de 10px) */
+#content p, p {
+    clear: both;
+    width: 90%;
+    margin: 10px auto; /* 10px de separación entre cada párrafo y centrados */
+    padding: 10px;      /* 10px de separación interna */
+    text-indent: 40px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+    border: 2px dashed black; /* Borde discontinuo/rayas como en el PDF */
+    box-sizing: border-box;
+}
+
+/* 4 y 12. Primer párrafo: fondo repetido y esquinas superiores redondeadas 30px */
+#content p:first-of-type, p:first-of-type {
+    background-image: url('../images/fondoParrafo.png');
+    background-repeat: repeat;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+/* Segundo párrafo (azul intermedio) */
+#content p:nth-of-type(2), p:nth-of-type(2) {
+    background-color: #6699CC;
+}
+
+/* 8. Último párrafo: fondo claro y esquinas inferiores redondeadas 30px */
+#content p:last-of-type, p:last-of-type {
+    background-color: #CCCCCC;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+/* Menú de navegación */
+ul, #menu ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    margin: 30px 0 20px 0;
+}
+
+/* 7. Línea roja de 5px a la izquierda de cada opción */
+li, #menu li {
+    display: inline-block;
+    border-left: 5px solid red;
+    padding-left: 8px;
+    margin: 0 10px;
+}
+
+li a, #menu a {
+    text-decoration: none;
+    color: #003366;
+    font-weight: bold;
+}
+
+/* 13. Subrayado rojo al pasar el cursor */
+li a:hover, #menu a:hover, a:hover {
+    text-decoration: underline;
+    text-decoration-color: red;
+}
+
+/* 6. Pie de página con línea superior negra de 5px */
+footer, #footer {
+    clear: both;
+    border-top: 5px solid black;
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+}
+
+/* Limpieza para que el enlace del pie no herede el formato de los 3 párrafos */
+footer p, #footer p {
+    clear: none;
+    width: auto;
+    border: none;
+    box-shadow: none;
+    text-indent: 0;
+    background: none;
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+
+footer a, #footer a {
+    color: #99CCFF;
+    text-decoration: underline;
+}
+
+/* Adaptación responsive para pantallas pequeñas */
+@media all and (max-width: 500px) {
+    img, #content img {
+        float: none;
+        display: block;
+        margin: 10px auto;
+        max-width: 90%;
+        height: auto;
+    }
+    #content p, p {
+        width: 95%;
+    }
+    li, #menu li {
+        display: block;
+        margin: 8px auto;
+        width: fit-content;
+    }
+}
